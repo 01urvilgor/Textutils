@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            max-width: 1200px;
+            width: 77%;
+            margin: auto;
+            }
+
+        .ug{
+            background-color: black;
+            color: white;
+            padding: 4px 4px;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .go{
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .pre .op{
+            text-align: left;
+            padding: 10px;
+            background-color: rgba(144, 238, 144, 0.384);
+            width: 100%;
+            font-size: larger;
+            font-weight: 800;
+        }
+
+
+        .all .pre span{
+            font-weight: normal;
+        }
+
+        .all footer{
+            font-family:'Poppins', sans-serif;
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            background-color: darkslategray;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="all">
+        
+        <div class="pre">
+            <p class="op">Welcome to Textutils! <span class="op2">You can do anything with your text here</span></p>
+        </div>
+    
+        <div class="container">
+    
+            <form action="/analyze" method="post" class="go">{% csrf_token %}
+                <p>Enter your text below and see the magic</p>
+                <textarea name= 'text' style='margin: 0px; width: 800px; height: 113px;'></textarea> <br>
+                <input type="checkbox" name="removepunc"> Remove Punctuations </input> <br>
+                <input type="checkbox" name="fullcaps"> UPPERCASE</input> <br>
+                <input type="checkbox" name="newlineremover"> New Line Remover</input> <br>
+                <input type="checkbox" name="extraspaceremover"> Extra Space Remover</input> <br>
+                <input type="checkbox" name="charcounter">Char Counter</input> <br>
+                <button class="ug" type="submit">Analyze Text</button>
+            
+            </form>
+        </div>
+
+        <footer>
+            <h3>Coded by urvil gor &copy; Rights Reserved </h3>
+        </footer>
+    </div>
+
+</body>
+</html>
